@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="notification none" id="notification">
+        <div class="container">
+            <h4>Noitificação</h4>
+        </div>
+
+        <hr>
+
+        <div class="container">
+            <p id="notification-text"></p>
+        </div>
+    </div>
+
+    <div class="entry-modal" id="entry-modal">
+        <div class="entry-form">
+            <div class="container">
+                <h1>DEV CALL</h1>
+                <input id="name-input" placeholder="Nome" onchange="setUserName()">
+            </div>
+
+            <hr>
+
+            <div class="container">
+                <button onclick="createRoom()">Criar sala</button>
+                <p>OU</p>
+                <input id="room-input" placeholder="ID da sala">
+                <button onclick="joinRoom()">Entrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="meet-area" id="meet-area">
+        <div class="meet-controls-bar" id="meet-controls-bar">
+            <div class="draggable" id="draggable"></div>
+            <button onclick="copyRoomId()">Copiar ID da sala</button>
+            <button id="screen-share-button" onclick="toggleScreenSharing()">Compartilhar tela</button>
+        </div>
+        <div class="user-list" id="user-list"></div>
+        <div class="screen-share-container" id="screen-share-container"></div>
+    </div>
+
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+    <script src="script.js"></script>
+    <script src="moveControls.js"></script>
+</body>
+</html>
